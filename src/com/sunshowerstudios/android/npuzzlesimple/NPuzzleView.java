@@ -81,7 +81,10 @@ public class NPuzzleView extends RelativeLayout
 	private static int difficulty = 3, 						// Difficulty level, ie. 3 -> 3 x 3 board.
 			   moves = 0;									// Number of moves thus far.
 	private OnSolveListener onSolveListener 				// Handles when the puzzle is solved.
-					= new OnSolveListener(); 				// the onSolve method is called.
+					= new OnSolveListener() 				// the onSolve method is called.
+	{
+		public void onSolve() {}
+	};
 	
 	/* ====================
 	 *    Public Methods
@@ -262,12 +265,9 @@ public class NPuzzleView extends RelativeLayout
 	//    OnSolveListener
 	// ====================
 	
-	public static class OnSolveListener
+	public static interface OnSolveListener
 	{
-		public void onSolve()
-		{
-			
-		}
+		public void onSolve();
 	}
 	
 	// =====================

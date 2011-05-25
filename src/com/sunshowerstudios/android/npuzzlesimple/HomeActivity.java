@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 // This is a demo app of NPuzzleView.
 
-public class HomeActivity extends Activity
+public class HomeActivity extends Activity implements OnSolveListener
 {
     private NPuzzleView mGame;
 	
@@ -22,7 +22,7 @@ public class HomeActivity extends Activity
         // Fetch NPuzzleView.
         mGame = (NPuzzleView) findViewById(R.id.game_board);
         
-        mGame.setOnSolveListener(solved); // Attach onSolveListener.
+        mGame.setOnSolveListener(this); // Attach onSolveListener.
         
         // Other examples include :
         // mGame.reload();
@@ -30,14 +30,10 @@ public class HomeActivity extends Activity
         // mGame.setImageUri(Uri uri);...
     }
     
-    // Callback for when the puzzle is solved.
-    private OnSolveListener solved = new OnSolveListener()
-    {
-    	@Override
-    	public void onSolve()
-    	{
-    		// Show a Toast telling the user how many moves they made.
-    		Toast.makeText(getApplicationContext(), "You Won With " + mGame.getMoves() + " Moves!", Toast.LENGTH_SHORT).show();
-    	}
-    };
+	@Override
+	public void onSolve()
+	{
+		// Show a Toast telling the user how many moves they made.
+		Toast.makeText(getApplicationContext(), "You Won With " + mGame.getMoves() + " Moves!", Toast.LENGTH_SHORT).show();
+	}
 }
