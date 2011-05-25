@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- NPuzzleView, do not forget /values/attrs.xml -->
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<com.sunshowerstudios.android.npuzzlesimple.NPuzzleView
+		xmlns:npz="http://schemas.android.com/apk/res/com.sunshowerstudios.android.npuzzlesimple"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		npz:src="@drawable/monkfish"
+		npz:border="@drawable/border"
+		npz:difficulty="3"
+		npz:countdownSeconds="5"
+		android:id="@+id/game_board" />
+</LinearLayout>
